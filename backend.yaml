@@ -50,7 +50,7 @@ spec:
     - metadata:
         name: my-storage 
       spec:
-        accessModes: ["ReadWriteOnce"]
+        accessModes: ["ReadWriteMany"]
         storageClassName: nfs-csi1
         resources:
           requests:
