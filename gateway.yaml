@@ -1,0 +1,14 @@
+apiVersion: gateway.netwrking.k8s.io/v1 
+kind: Gateway 
+metadata:
+  name: gateway-retail 
+  namespace: retail 
+spec:
+  gatewayClassName: kgateway
+  listerners:
+    - name: http 
+      protocol: HTTP
+      port: 80
+      allowedRoutes:
+        namespace:
+          from: Same 
