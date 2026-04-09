@@ -1,0 +1,104 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata:
+  name: frontend-deployment 
+  namespace: retail 
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate 
+    rollingUpdate:
+      maxUnavailable: 1 
+      maxSurge: 1
+  selector: 
+    matchLabels:
+      app : retail 
+  template:
+    metadata:
+      labels:
+        app: retail 
+    spec:
+      containers:
+        - name: retail-cont 
+          image:
+          port:
+            - containerPort: 
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "200Mi"
+            limits:
+              cpu: "400m"
+              memory: "512Mi"
+          env:
+            - name: PORT
+              ValueFrom:
+                secretKeyRef:
+                  name: retail-secret 
+                  key: PORT
+            - name: EMAIL_SERVICE
+              ValueFrom:
+                secretKeyRef: 
+                  name: retail-secret 
+                  key: EMAIL_SERVICE
+            - name: EMAIL_USER
+              ValueFrom:
+                secretKeyRef:
+                  name: retail-secret 
+                  key: EMAIL_USER
+            - name: EMAIL_PASS
+              ValueFrom:
+                secretKeyRef:
+                  name: retail-secret 
+                  key: EMAIL_PASS
+            - name: SUPPORT_EMAIL
+              ValueFrom:
+                secretKeyRef:
+                  name: retail-secret 
+                  key: SUPPORT_EMAIL
+            - name: ADMIN_USERNAME
+              ValueFrom:
+                secretKeyRef:
+                  name: retail-secret 
+                  key: ADMIN_USERNAME
+            - name: ADMIN_EMAIL
+              ValueFrom:
+                secretKeyRef:
+                  name: retail-secret 
+                  key: ADMIN_EMAIL
+            - name: ADMIN_PASSWORD
+              ValueFrom:
+                secretKeyRef:
+                  name: retail-secret 
+                  key: ADMIN_PASSWORD
+            - name: DB_HOST
+              ValueFrom:
+                configMapRef:
+                  name: retail-config
+                  key: DB_HOST
+            - name: DB_USER
+              ValueFrom:
+                configMapRef:
+                  name: retail-config
+                  key: DB_USER
+            - name: DB_PASSWORD
+              ValueFrom:
+                configMapRef:
+                  name: retail-config
+                  key: DB_PASSWORD
+            - name: DB_NAME
+              ValueFrom:
+                configMapRef:
+                  name: retail-config
+                  key: DB_NAME
+            - name: DB_PORT
+              ValueFrom:
+                configMapRef:
+                  name: retail-config
+                  key: DB_PORT
+            
+                              
+                
+
+
+      
