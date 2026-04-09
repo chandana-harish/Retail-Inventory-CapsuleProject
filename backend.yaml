@@ -38,23 +38,23 @@ spec:
             - name: MYSQL_PASSWORD
               value: "capsule_password"
           volumeMounts:
-            - name: my-storage 
-              mountPath: /var/lib/mysql
+            # - name: my-storage 
+            #   mountPath: /var/lib/mysql
             - name: mysql-q
               mountPath: /docker-entrypoint-initdb.d 
       volumes:
       - name: mysql-q
         configMap:
           name: mysql-init 
-  volumeClaimTemplates:
-    - metadata:
-        name: my-storage 
-      spec:
-        accessModes: ["ReadWriteOnce"]
-        storageClassName: nfs-csi1
-        resources:
-          requests:
-            storage: "2Gi"
+  # volumeClaimTemplates:
+  #   - metadata:
+  #       name: my-storage 
+  #     spec:
+  #       accessModes: ["ReadWriteOnce"]
+  #       storageClassName: nfs-csi1
+  #       resources:
+  #         requests:
+  #           storage: "2Gi"
   
           # envFrom:
           #   - configMapRef:
