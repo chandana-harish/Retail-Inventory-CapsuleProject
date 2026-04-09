@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: retail-cont 
-          image:
+          image: muralisocial123/retail-app:v-26
           port:
             - containerPort: 
           resources:
