@@ -23,3 +23,13 @@ data:
   POPULATE_SAMPLE_DATA: "false"
   BACKUP_DIR: "./backups"
   BACKUP_RETENTION_DAYS: "30"
+  PORT: "3000"
+  
+  
+  EMAIL_SERVICE: "gmail"
+  EMAIL_USER: "vasuvarshney2002@gmail.com"
+  EMAIL_PASS: "spsq ulhf ockl eumq"
+  SUPPORT_EMAIL: "your-support@email.com"
+  ADMIN_USERNAME: "admin"
+  ADMIN_EMAIL: "admin@your-domain.com"
+  ADMIN_PASSWORD: "secure-admin-password"
