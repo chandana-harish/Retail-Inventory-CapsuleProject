@@ -22,7 +22,7 @@ spec:
         - name: retail-cont 
           image: muralisocial123/retail-app:v-26
           ports:
-            - containerPort: 
+            - containerPort: 3000
           resources:
             requests:
               cpu: "100m"
