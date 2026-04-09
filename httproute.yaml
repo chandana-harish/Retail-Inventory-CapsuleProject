@@ -1,0 +1,22 @@
+apiVersion: gateway.networking.k8s.io/k8s 
+kind: HTTPRoute
+metadata:
+  name: route-retail 
+  namespace: retail 
+spec:
+  parentRefs:
+    - name: gateway 
+  rules:
+    matches: 
+      path:
+        type: PathPrefix
+        value: /
+    filters:
+      type: URLRewrite 
+      urlRewrite:
+        path:
+          type: ReplacePrefixMatch
+          replacePrefixMatch: /
+    backendRefs:
+      - name: frontend-service 
+        port: 3000
