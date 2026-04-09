@@ -4,10 +4,11 @@ metadata:
   name: retail-config 
   namespace: retail 
 data:
-  DB_HOST: "localhost"
+  DB_HOST: "backend-service"
   MYSQL_USER: "capsule_user"
   MYSQL_ROOT_PASSWORD: "rootpassword"
   MYSQL_DATABASE: "capsule_db"
+  DB_USER: "root"
   DB_PORT: "3306"
   NODE_ENV: "development" 
   SESSION_SECRET: "your-strong-random-secret-key-here"
