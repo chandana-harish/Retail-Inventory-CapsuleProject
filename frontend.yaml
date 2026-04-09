@@ -32,67 +32,67 @@ spec:
               memory: "512Mi"
           env:
             - name: PORT
-              ValueFrom:
+              valueFrom:
                 secretKeyRef:
                   name: retail-secret 
                   key: PORT
             - name: EMAIL_SERVICE
-              ValueFrom:
+              valueFrom:
                 secretKeyRef: 
                   name: retail-secret 
                   key: EMAIL_SERVICE
             - name: EMAIL_USER
-              ValueFrom:
+              valueFrom:
                 secretKeyRef:
                   name: retail-secret 
                   key: EMAIL_USER
             - name: EMAIL_PASS
-              ValueFrom:
+              valueFrom:
                 secretKeyRef:
                   name: retail-secret 
                   key: EMAIL_PASS
             - name: SUPPORT_EMAIL
-              ValueFrom:
+              valueFrom:
                 secretKeyRef:
                   name: retail-secret 
                   key: SUPPORT_EMAIL
             - name: ADMIN_USERNAME
-              ValueFrom:
+              valueFrom:
                 secretKeyRef:
                   name: retail-secret 
                   key: ADMIN_USERNAME
             - name: ADMIN_EMAIL
-              ValueFrom:
+              valueFrom:
                 secretKeyRef:
                   name: retail-secret 
                   key: ADMIN_EMAIL
             - name: ADMIN_PASSWORD
-              ValueFrom:
+              valueFrom:
                 secretKeyRef:
                   name: retail-secret 
                   key: ADMIN_PASSWORD
             - name: DB_HOST
-              ValueFrom:
+              valueFrom:
                 configMapRef:
                   name: retail-config
                   key: DB_HOST
             - name: DB_USER
-              ValueFrom:
+              valueFrom:
                 configMapRef:
                   name: retail-config
                   key: DB_USER
             - name: DB_PASSWORD
-              ValueFrom:
+              valueFrom:
                 configMapRef:
                   name: retail-config
                   key: DB_PASSWORD
             - name: DB_NAME
-              ValueFrom:
+              valueFrom:
                 configMapRef:
                   name: retail-config
                   key: DB_NAME
             - name: DB_PORT
-              ValueFrom:
+              valueFrom:
                 configMapRef:
                   name: retail-config
                   key: DB_PORT
