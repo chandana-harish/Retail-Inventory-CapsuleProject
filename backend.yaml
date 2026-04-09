@@ -28,9 +28,18 @@ spec:
             limits:
               cpu: "200m"
               memory: "512Mi"
-          envFrom:
-            - configMapRef:
-                name: retail-config
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "rootpassword"
+            - name: MYSQL_DATABASE
+              value: "capsule_db"
+            - name: MYSQL_USER
+              value: "capsule_user"
+            - name: MYSQL_PASSWORD
+              value: "capsule_password"
+          # envFrom:
+          #   - configMapRef:
+          #       name: retail-config
           # env:
           #   - name: PORT
           #     valueFrom:

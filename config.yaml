@@ -6,7 +6,7 @@ metadata:
 data:
   DB_HOST: "backend-service"
   MYSQL_USER: "capsule_user"
-  MYSQL_ROOT_PASSWORD: "rootpassword"
+  DB_PASSWORD: "rootpassword"
   MYSQL_DATABASE: "capsule_db"
   DB_USER: "root"
   DB_PORT: "3306"
